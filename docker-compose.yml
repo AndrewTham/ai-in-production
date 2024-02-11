@@ -1,0 +1,22 @@
+version: "3"
+
+services:
+  ai_app:
+    image: ai_app:1.0.0
+    container_name: ai_in_production
+    build: 
+      context: .
+      dockerfile: Dockerfile
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: 1
+              capabilities: [gpu]
+    ports:
+      - 8000:8000
+    environment:
+      - PORT=8000
+    volumes:
+      - ./models:/code/models
