@@ -2,7 +2,7 @@
 
 This is a Gradio application built on top of a FastAPI server, packaged in as a Docker service.
 
-## Usage
+## Setup
 Download the models from `https://huggingface.co/togethercomputer/RedPajama-INCITE-Chat-3B-v1/tree/main` into a folder called `models`.
 
 In your command terminal, execute the following code:
@@ -11,7 +11,11 @@ In your command terminal, execute the following code:
 docker-compose up -d --build
 ```
 
-Thereafter, the UI will be accessible at `localhost:8000` by default
+## Usage
+Note: Port is 8000 by default
+
+- The chat interface (Gradio) will be accessible at `localhost:8000/ui`
+- The chatbot API will be accessible at `localhost:8000/predict`. Check out `localhost:8000/docs` for more info
 
 ## System Requirements
 
