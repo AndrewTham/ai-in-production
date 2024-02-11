@@ -1,13 +1,14 @@
 from pydantic import BaseModel
-from typing import List
+from typing import Iterable, List
 
 
 class Request(BaseModel):
-    question: str
+    message: str
+    history: List[str]
 
 
 class Result(BaseModel):
-    text: str
+    text_stream: Iterable
 
 
 class Response(BaseModel):

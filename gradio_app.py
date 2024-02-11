@@ -1,15 +1,16 @@
 import gradio as gr
 
-from predict import predict
+from chatbot import predict
 
 
-def gradio_predict(question: str):
-    return predict(question)
+def gradio_predict(message, history):
+    yield next(predict(message, history))
 
 
-gradio_app = gr.Interface(
-    fn=gradio_predict,
-    inputs=gr.Textbox(label="Ask a question", placeholder="Whatsup?"),
-    outputs=[gr.Textbox(label="Answer")],
-    allow_flagging="never",
+gradio_app = gr.ChatInterface(
+    fn=predict,
+    textbox=gr.Textbox(placeholder="Chat with me!", container=False, scale=7),
+    title="Chat Pal",
+    description="A local chatbot to kill your boredom",
+    theme="soft",
 )

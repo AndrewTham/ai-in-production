@@ -3,6 +3,7 @@
 This is a Gradio application built on top of a FastAPI server, packaged in as a Docker service.
 
 ## Usage
+Download the models from `https://huggingface.co/togethercomputer/RedPajama-INCITE-Chat-3B-v1/tree/main` into a folder called `models`.
 
 In your command terminal, execute the following code:
 
