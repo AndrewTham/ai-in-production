@@ -19,4 +19,4 @@ Note: Port is 8000 by default
 
 ## System Requirements
 
-Note that this repository is build and tested on a Windows machine.
+Note that this repository was built and tested on a Windows machine.
